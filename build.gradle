@@ -1,0 +1,29 @@
+
+plugins {
+    id 'java-library'
+}
+//소스 인코딩지정
+tasks.withType(JavaCompile) {
+   options.encoding= 'UTF-8'
+}
+
+// 문서화 File encoding
+javadoc {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.46'
+    
+    testImplementation 'junit:junit:4.12'
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.0'
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.0'
+}
+
+repositories {
+    jcenter()
+}
